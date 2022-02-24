@@ -1,0 +1,15 @@
+{
+  "cookies": [
+    {
+      "name": "pj-session",
+      "value": "Fe26.2*1*da8b45f18884a569e94bf02b46f901ef828a3658de93faf6c594635d7d9da931*eB2CZQKd6oFtO6zFoBYEqw*NjfrNRKmU4ds--SJm20DlhFAtPVvhkOzC6YVEhdC9QcDkTM5iS-lAgDwr0zRm3Xmx06nh73suVWh3yUiyjB-_qOd-aUDoRgkU5jVFZNsh2qOFdDCfFYdRxNJFP_JFn4K*1646992574109*796461c00cd715703686d0704e501d6cbadbb2b397981269a82b864a849c0cb9*cUKgdolIX_KB0GUkDJ0RWizW90fzIBcwYbgEoxZamJY~2",
+      "domain": "localhost",
+      "path": "/",
+      "expires": 1646992514,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}
