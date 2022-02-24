@@ -1,34 +1,53 @@
-This is a good tools set for [Next.js](https://nextjs.org/) development
+# Boilerplate
 
-## Getting Started
+Let you can maintain high quality code with multiple way. Not any library/platform's ads placement.
 
-First, run the development server:
+Mostly use `@chakra-ui/react` personally. But still can replace it quick.
 
-```bash
-npm run dev
-# or
-yarn dev
+Only implement the simplest auth hook with SWR. But it also can replace by `react-query`, `zustand` or `mobx`, your free.
+
+If you want to improve this boilerplate. [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
+
+## Tech stack
+
+- Nextjs
+- Prisma
+- Typescript
+- Playwright
+- Docker
+
+## Folder Structure
+
+```
++ <root_dir>
++-- artifact/ - store the state that will be use in e2e test
++-- e2e/      - e2e tests case
++-- prisma    - prisma schema & related scripts
++-- public    - nextjs's static file serving storage
++-- scripts   - some helper function for project setting
++-- src       - nextjs application
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Local development
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+First create a postgres database. If you dont want to go to cloud platform for now. You can use `./docker-compose.yml` to init one.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+After install packages. Please refer to `.env.sample` to build `.env` in root dir.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Then run `yarn prisma migrate deploy && yarn prisma generate` to generate prisma client.
 
-## Learn More
+Now. run `yarn dev` then you can see the website.
 
-To learn more about Next.js, take a look at the following resources:
+## Test
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+There are multiple ways to let you build high quality code with test. Good luck.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Unit test
 
-## Deploy on Vercel
+Run `yarn test:unit` to see the result.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Intergration test
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Currently using `./docker-compose.test.yml` to build test environment. Before run, remember to give `wait-for-it.sh` permission.
+
+After init postgres database. Just run `yarn tester && yarn test:e2e` to see the result.

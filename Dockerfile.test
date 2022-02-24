@@ -1,6 +1,7 @@
-# prisma still not support  https://github.com/prisma/prisma/issues/8478
+# Prisma still not support alpine very well. So use buster-slim. Reference: https://github.com/prisma/prisma/issues/8478
 FROM node:16.14-buster-slim
 
+# Install openssl cause prisma need it
 RUN apt-get update && \
     apt-get install openssl -y && \
     apt-get clean
